@@ -1,0 +1,44 @@
+/* *************
+ROOT + FONTS
+************* */
+@font-face {
+	font-family: "Cinzel";
+	src: url("../font/Cinzel/Cinzel-VariableFont_wght.ttf"), format("ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	src: url("../font/IBM_Plex_Mono/IBMPlexMono-Regular.ttf"), format("ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Lora";
+	src: url("../font/Lora/Lora-VariableFont_wght.ttf"), format("ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--heading-font: "Cinzel", "URW Bookman", "Georgia Pro", Georgia, serif;
+	--text-font: "Lora", Optima, source-sans-pro, sans-serif;
+}
+
+/* *************
+GENERAL STYLING
+************* */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-family: var(--heading-font);
+}
+
+p {
+	font-family: var(--text-font);
+}
