@@ -44,3 +44,11 @@ h1 {
 p {
 	font-family: var(--text-font);
 }
+
+article section:not(section:first-of-type) {
+	display: none;
+}
+
+.hidden {
+	display: none;
+}
