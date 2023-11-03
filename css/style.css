@@ -34,7 +34,7 @@ body {
 	margin: 0;
 	padding: 0;
 
-	background-color: #c4a189;
+	background-image: url(../img/brick-background.png);
 }
 
 h1 {
@@ -45,9 +45,9 @@ p {
 	font-family: var(--text-font);
 }
 
-article section:not(section:first-of-type) {
+/* article section:not(section:first-of-type) {
 	display: none;
-}
+} */
 
 .hidden {
 	display: none;

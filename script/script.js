@@ -32,3 +32,8 @@ testButton.addEventListener("click", () => {
 	}
 	console.log(paragraphID)
 })
+
+// Function to handle drag start event
+function dragStart(event) {
+	event.dataTransfer.setData("text", event.target.id)
+}
