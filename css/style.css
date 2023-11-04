@@ -38,7 +38,14 @@ body {
 }
 
 h1 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+
+	margin: 0;
+
 	font-family: var(--heading-font);
+	font-size: 2em;
+	text-align: center;
 }
 
 p {
@@ -60,7 +67,7 @@ CLUES
 ************* */
 article > section:first-of-type {
 	position: absolute;
-	top: 1em;
+	top: 2em;
 	left: 1em;
 
 	min-width: 50em;
@@ -68,9 +75,12 @@ article > section:first-of-type {
 	aspect-ratio: 16/9;
 
 	background: radial-gradient(#e5e5e5 50%, #bcbcbc);
+	box-shadow: 0.5em 0.5em 2em 1em rgb(25 5 0 / 0.75);
 }
 
 article > section:first-of-type ul {
+	display: flex;
+
 	margin: 0;
 	padding: 0;
 
@@ -78,7 +88,7 @@ article > section:first-of-type ul {
 }
 
 article > section:first-of-type ul li {
-	display: grid;
+	display: none;
 	grid-template-columns: 40% 57.5%;
 	gap: 1em;
 
@@ -91,11 +101,8 @@ article > section:first-of-type ul li {
 	height: 30em;
 }
 
-article > section:first-of-type ul li h1 {
-	grid-column-start: 1;
-	grid-column-end: 3;
-
-	text-align: center;
+article > section:first-of-type ul li.active {
+	display: grid;
 }
 
 article > section:first-of-type ul li p {
