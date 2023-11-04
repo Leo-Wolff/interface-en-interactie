@@ -22,10 +22,10 @@ testButton.addEventListener("click", () => {
 			"Dean dies and Sam is most upset. Until he wakes up, it is Tuesday again and Dean is alive."
 
 		document
-			.querySelector("article > section:first-of-type img:first-of-type")
+			.querySelector("article > section:first-of-type img")
 			.classList.add("hidden")
 		document
-			.querySelector("article > section:first-of-type img:last-of-type")
+			.querySelector("article > section:first-of-type video")
 			.classList.remove("hidden")
 	} else {
 		return
