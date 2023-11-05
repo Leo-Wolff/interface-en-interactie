@@ -1,0 +1,34 @@
+article > section:nth-of-type(2) section {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
+	align-content: space-between;
+	gap: 1em;
+
+	position: absolute;
+	left: 3.25em;
+	transform: skew(-15deg);
+
+	width: calc(100% - 5.75em); /* negate skew */
+	height: calc(100% - 2em); /* margin */
+}
+
+article > section:nth-of-type(2) section img {
+	align-self: flex-start;
+}
+
+article > section:nth-of-type(2) section img:first-of-type {
+	order: 1;
+}
+
+article > section:nth-of-type(2) section img:nth-of-type(2) {
+	order: 2;
+}
+
+article > section:nth-of-type(2) section img:nth-of-type(3) {
+	order: 3;
+}
+
+article > section:nth-of-type(2) section img:last-of-type {
+	order: 4;
+}
