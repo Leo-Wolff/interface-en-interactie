@@ -47,7 +47,11 @@
 							</p>
 
 							<!-- Pentagram -->
-							<img src="img/pentagram.png" />
+							<img
+								ondragover="allowDrop(event)"
+								ondrop="drop(event)"
+								src="img/pentagram.png"
+							/>
 
 							<!-- Death scene -->
 							<video
@@ -57,23 +61,35 @@
 							></video>
 						</li>
 					</ul>
-
-					<a>Insert all the evidence</a>
 				</section>
-
-				<!-- <img
-					src="img/evidence.png"
-					draggable="true"
-					ondragstart="dragStart(event)"
-				/> -->
 
 				<section>
 					<!-- Evidence -->
 					<section>
-						<img src="img/sausages.png" />
-						<img src="img/dog-collar.png" />
-						<img src="img/water-glass.png" />
-						<img src="img/mystery-cube.png" />
+						<img
+							draggable="true"
+							ondragstart="dragStart(event)"
+							src="img/sausages.png"
+							alt="Sausages"
+						/>
+						<img
+							draggable="true"
+							ondragstart="dragStart(event)"
+							src="img/dog-collar.png"
+							alt="Dog collar"
+						/>
+						<img
+							draggable="true"
+							ondragstart="dragStart(event)"
+							src="img/water-glass.png"
+							alt="Glass of water"
+						/>
+						<img
+							draggable="true"
+							ondragstart="dragStart(event)"
+							src="img/mystery-cube.png"
+							alt="Cube with a black and green spiral"
+						/>
 					</section>
 				</section>
 
