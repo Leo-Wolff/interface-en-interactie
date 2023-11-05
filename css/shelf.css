@@ -1,0 +1,56 @@
+article > section:last-of-type > section {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1.5em auto);
+
+	align-items: end;
+
+	margin-top: 8.5em;
+
+	width: 100%;
+	height: calc(100% - 8.5em); /* negate margin */
+}
+
+/* SHELVES */
+article > section:last-of-type > section div {
+	grid-column: 1 / -1;
+
+	width: 100%;
+	height: 100%;
+	background-color: rgb(86, 47, 22);
+}
+
+article > section:last-of-type > section div:first-of-type {
+	grid-row-start: 1;
+}
+
+article > section:last-of-type > section div:nth-of-type(2) {
+	grid-row-start: 3;
+}
+
+article > section:last-of-type > section div:last-of-type {
+	grid-row-start: 5;
+}
+
+article > section:last-of-type > section img {
+	transform: scale(0.75);
+}
+
+article > section:last-of-type > section img:nth-of-type(5) {
+	grid-column: 1 / 3;
+	grid-row-start: 4;
+}
+
+article > section:last-of-type > section img:last-of-type {
+	grid-column-end: 5;
+	justify-self: end;
+}
+
+article > section:last-of-type > section section {
+	display: flex;
+	grid-row-start: 6;
+}
+
+article > section:last-of-type > section section img {
+	align-self: flex-start;
+}

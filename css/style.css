@@ -56,10 +56,6 @@ p {
 	font-family: var(--text-font);
 }
 
-article > section:last-of-type {
-	display: none;
-}
-
 .hidden {
 	display: none;
 }
@@ -81,8 +77,7 @@ article > section:first-of-type {
 	margin: 1em;
 	box-shadow: 0.5em 0.5em 2em 1em rgb(25 5 0 / 0.75);
 
-	min-width: 50em;
-	max-width: 45vw;
+	width: 50em;
 	aspect-ratio: 16/9;
 
 	background: var(--whiteboard-gradient);
@@ -106,4 +101,12 @@ article > section:last-of-type {
 	grid-column-start: 2;
 	grid-row-start: 1;
 	grid-row-end: 3;
+
+	margin-top: 1em;
+	border: 3em solid #bcbcbc;
+	border-bottom: none;
+	border-right: none;
+	border-radius: 71% 0% 0% 0% / 22% 0% 0% 0%;
+
+	background-color: rgb(165 89 42);
 }

@@ -43,9 +43,14 @@ showCurrentLi()
 const targetImage = document.querySelector(
 	"article > section:first-of-type li:first-of-type img"
 )
-
 const tableImages = document.querySelectorAll(
 	"article > section:nth-of-type(2) img"
+)
+const shelfImages = document.querySelectorAll(
+	"article > section:last-of-type img"
+)
+const trunkImages = document.querySelectorAll(
+	"article > section:last-of-type section > section img"
 )
 let draggedImage
 
@@ -74,17 +79,22 @@ function drop(event) {
 				firstLiClueText[0].textContent =
 					"Dean and Sam Winchester were on a new case. Someone disappeared in a most curious Spot."
 
+				draggedImage.classList.add("hidden")
+
 				//if the first clue gets revealed, increase the paragraphID so that more text can be revealed upon the next button press
 				paragraphID++
-				draggedImage.classList.add("hidden")
-			} else if (paragraphID == 1) {
+			} else if (paragraphID == 1 && draggedImage == shelfImages[0]) {
 				firstLiClueText[1].textContent =
 					"They decide to investigate at night, but suddenly got interrupted."
 
+				draggedImage.classList.add("hidden")
+
 				paragraphID++
-			} else if (paragraphID == 2) {
+			} else if (paragraphID == 2 && draggedImage == trunkImages[0]) {
 				firstLiClueText[2].textContent =
 					"Dean dies and Sam is most upset. Until he wakes up, it is Tuesday again and Dean is alive."
+
+				draggedImage.classList.add("hidden")
 
 				document
 					.querySelector("article > section:first-of-type li:first-of-type img")
