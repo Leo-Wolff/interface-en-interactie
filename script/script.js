@@ -85,7 +85,7 @@ function allowDrop(event) {
 const clueData = {
 	0: {
 		firstImage: tableImages[1],
-		secondImage: shelfImages[2],
+		secondImage: shelfImages[3],
 		thirdImage: tableImages[0],
 		clueParagraph: document.querySelectorAll(
 			"article > section:first-of-type li:first-of-type p:not(:first-of-type)"
@@ -96,9 +96,9 @@ const clueData = {
 		],
 	},
 	1: {
-		firstImage: shelfImages[4],
+		firstImage: shelfImages[2],
 		secondImage: tableImages[1],
-		thirdImage: shelfImages[3],
+		thirdImage: shelfImages[6],
 		clueParagraph: document.querySelectorAll(
 			"article > section:first-of-type li:nth-of-type(2) p:not(:first-of-type)"
 		),
@@ -107,24 +107,11 @@ const clueData = {
 			"The other hunters are angry at Sam and Dean for starting the Apocalypse. They take matters into their own hands.",
 		],
 	},
-	2: {
-		firstImage: shelfImages[6],
-		secondImage: shelfImages[4],
-		thirdImage: tableImages[1],
-		clueParagraph: document.querySelectorAll(
-			"article > section:first-of-type li:nth-of-type(3) p:not(:first-of-type)"
-		),
-		text: [
-			"With the First Blade and the Mark of Cain, Dean believes he is the only one who can kill the enemy.",
-			"Dean dies at the hands of Metatron, but then a plot twist happens.",
-		],
-	},
 }
 let paragraphID = 0
 
 console.log(tableImages)
 console.log(shelfImages)
-// console.log(trunkImages)
 
 function drop(event) {
 	event.preventDefault()

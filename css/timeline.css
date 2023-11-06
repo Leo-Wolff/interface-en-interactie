@@ -97,6 +97,8 @@ article > section:first-of-type li p:first-of-type {
 	align-self: center;
 
 	margin: 0;
+
+	line-height: 0;
 }
 
 article > section:first-of-type li img,

@@ -23,6 +23,8 @@ ROOT + FONTS
 }
 
 :root {
+	--shelf-colour: #aa8261;
+
 	--heading-font: "Cinzel", "URW Bookman", "Georgia Pro", Georgia, serif;
 	--text-font: "Lora", Optima, source-sans-pro, sans-serif;
 
@@ -44,10 +46,12 @@ h1 {
 	grid-column-end: 3;
 
 	margin: 0;
+	padding-top: 0.75em;
 
 	font-family: var(--heading-font);
 	font-size: 2em;
 	text-align: center;
+	line-height: 0;
 }
 
 p {
@@ -120,6 +124,7 @@ article > section:nth-of-type(2) {
 	grid-column-start: 1;
 	grid-row-start: 2;
 
+	position: relative;
 	transform-origin: bottom right;
 	transform: skew(15deg);
 
@@ -127,7 +132,7 @@ article > section:nth-of-type(2) {
 
 	height: auto;
 
-	background-color: rgb(165 89 42);
+	background-image: url(../img/wooden-texture-90.jpg);
 }
 
 article > section:last-of-type {
@@ -144,5 +149,15 @@ article > section:last-of-type {
 
 	height: calc(100% - 1em); /* give it a margin essentially */
 
-	background-color: rgb(165 89 42);
+	background-image: url(../img/wooden-texture.jpg);
+}
+
+article > section:nth-of-type(2) img:hover {
+	transform: scale(1.25);
+	transition: 0.5s;
+}
+
+article > section:last-of-type img:hover {
+	transform: scale(1);
+	transition: 0.5s;
 }
