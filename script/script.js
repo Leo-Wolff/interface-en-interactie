@@ -49,9 +49,6 @@ navButtons[1].addEventListener("click", () => {
 	shelfImages.forEach((img) => {
 		img.classList.remove("hidden")
 	})
-	trunkImages.forEach((img) => {
-		img.classList.remove("hidden")
-	})
 
 	showCurrentLi()
 })
@@ -71,9 +68,6 @@ const tableImages = document.querySelectorAll(
 const shelfImages = document.querySelectorAll(
 	"article > section:last-of-type img"
 )
-const trunkImages = document.querySelectorAll(
-	"article > section:last-of-type section > section img:not(:first-of-type)"
-)
 let draggedImage
 
 function dragStart(event) {
@@ -90,34 +84,46 @@ function allowDrop(event) {
 // This object has all of the different information that is needed for each specific item in the timeline
 const clueData = {
 	0: {
-		firstImage: tableImages[3],
-		secondImage: trunkImages[0],
-		thirdImage: shelfImages[2],
+		firstImage: tableImages[2],
+		secondImage: shelfImages[2],
+		thirdImage: tableImages[1],
 		clueParagraph: document.querySelectorAll(
 			"article > section:first-of-type li:first-of-type p:not(:first-of-type)"
 		),
 		text: [
-			"They decide to investigate at night, but suddenly got interrupted.",
-			"Dean dies and Sam is most upset. Until he wakes up, it is Tuesday again and Dean is alive.",
+			"It was a demon, he talked with them to save Sam's live.",
+			"The year has happed. Time is up. Dean gets ripped to shreds by the demon's helper.",
 		],
 	},
 	1: {
-		firstImage: tableImages[3],
-		secondImage: shelfImages[3],
-		thirdImage: shelfImages[2],
+		firstImage: shelfImages[4],
+		secondImage: tableImages[2],
+		thirdImage: shelfImages[3],
 		clueParagraph: document.querySelectorAll(
 			"article > section:first-of-type li:nth-of-type(2) p:not(:first-of-type)"
 		),
 		text: [
-			"Sam suggests this time to investigate during the day, but Dean doesn't watch the road.",
-			"Dean dies for a second time. Then Sam wakes up, it is Tuesday for a third time and Dean is alive.",
+			"Sam and Dean caused Lucifer to rise. What does he rule?",
+			"The other hunters are angry at Sam and Dean for starting the Apocalypse. They take matters into their own hands.",
+		],
+	},
+	2: {
+		firstImage: shelfImages[6],
+		secondImage: shelfImages[4],
+		thirdImage: tableImages[2],
+		clueParagraph: document.querySelectorAll(
+			"article > section:first-of-type li:nth-of-type(2) p:not(:first-of-type)"
+		),
+		text: [
+			"With the First Blade and the Mark of Cain, Dean believes he is the only one who can kill the enemy.",
+			"Dean dies at the hands of Metatron, but then a plot twist happens.",
 		],
 	},
 }
 let paragraphID = 0
 
-// console.log(tableImages)
-// console.log(shelfImages)
+console.log(tableImages)
+console.log(shelfImages)
 // console.log(trunkImages)
 
 function drop(event) {
@@ -136,21 +142,44 @@ function revealClues(event) {
 	if (paragraphID == 0 && draggedImage == currentClue.firstImage) {
 		currentClue.clueParagraph[1].textContent = currentClue.text[0]
 
+		targetImage[currentIndex].classList.add("spin")
 		draggedImage.classList.add("hidden")
+
+		setTimeout(function () {
+			targetImage[currentIndex].classList.remove("spin")
+		}, 1000)
 
 		//if the first clue gets revealed, increase the paragraphID so that more text can be revealed upon the next button press
 		paragraphID++
 	} else if (paragraphID == 1 && draggedImage == currentClue.secondImage) {
 		currentClue.clueParagraph[2].textContent = currentClue.text[1]
 
+		targetImage[currentIndex].classList.add("spin")
 		draggedImage.classList.add("hidden")
+
+		setTimeout(function () {
+			targetImage[currentIndex].classList.remove("spin")
+		}, 1000)
 
 		paragraphID++
 	} else if (paragraphID == 2 && draggedImage == currentClue.thirdImage) {
+		targetImage[currentIndex].classList.add("spin")
 		draggedImage.classList.add("hidden")
 
-		targetImage[currentIndex].classList.add("hidden")
-		liElements[currentIndex].querySelector("video").classList.remove("hidden")
+		setTimeout(function () {
+			targetImage[currentIndex].classList.add("disappear")
+		}, 1000)
+
+		setTimeout(function () {
+			liElements[currentIndex].querySelector("video").classList.remove("hidden")
+			liElements[currentIndex].querySelector("video").classList.add("appear")
+		}, 2000)
+
+		setTimeout(function () {
+			targetImage[currentIndex].classList.remove("spin", "disappear")
+			targetImage[currentIndex].classList.add("hidden")
+			liElements[currentIndex].querySelector("video").classList.remove("appear")
+		}, 3000)
 
 		paragraphID = 0
 	} else {

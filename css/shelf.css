@@ -34,6 +34,7 @@ article > section:last-of-type > section div:last-of-type {
 
 article > section:last-of-type > section img {
 	transform: scale(0.75);
+	transform-origin: bottom center;
 }
 
 article > section:last-of-type > section img:nth-of-type(5) {

@@ -60,6 +60,39 @@ p {
 	display: none;
 }
 
+.spin {
+	animation: spin 1s ease-in-out;
+}
+
+.disappear {
+	animation: disappear 1s ease-in forwards;
+}
+
+.appear {
+	animation: disappear 1s ease-in reverse;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+@keyframes disappear {
+	0% {
+		transform: scale(1);
+	}
+	25% {
+		transform: scale(1.25);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
 article {
 	display: grid;
 	grid-template-rows: 1fr 1fr;

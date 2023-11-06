@@ -105,6 +105,7 @@ video {
 	grid-row-start: 3;
 	grid-row-end: 6;
 	align-self: center;
+	justify-self: center;
 
 	/* position is given so that the z-index will properly get the img and video to appear on top */
 	position: relative;
@@ -112,4 +113,8 @@ video {
 	width: 100%;
 
 	z-index: 10;
+}
+
+article > section:first-of-type li img {
+	width: 75%;
 }
