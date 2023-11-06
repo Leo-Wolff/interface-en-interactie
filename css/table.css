@@ -15,4 +15,8 @@ article > section:nth-of-type(2) section {
 
 article > section:nth-of-type(2) section img {
 	align-self: flex-end;
+
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
 }
