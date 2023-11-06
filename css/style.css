@@ -99,8 +99,8 @@ article {
 	grid-template-columns: 1fr 1fr;
 	gap: 2em;
 
-	width: calc(100vw); /* negate margin */
-	height: calc(100vh); /* negate margin */
+	width: 100vw; /* negate margin */
+	height: 100vh; /* negate margin */
 }
 
 article > section:first-of-type {
@@ -134,12 +134,15 @@ article > section:last-of-type {
 	grid-column-start: 2;
 	grid-row-start: 1;
 	grid-row-end: 3;
+	grid-column-end: auto;
+	align-self: end;
 
-	margin-top: 1em;
 	border: 3em solid #bcbcbc;
 	border-bottom: none;
 	border-right: none;
 	border-radius: 71% 0% 0% 0% / 22% 0% 0% 0%;
+
+	height: calc(100% - 1em); /* give it a margin essentially */
 
 	background-color: rgb(165 89 42);
 }

@@ -14,21 +14,5 @@ article > section:nth-of-type(2) section {
 }
 
 article > section:nth-of-type(2) section img {
-	align-self: flex-start;
-}
-
-article > section:nth-of-type(2) section img:first-of-type {
-	order: 1;
-}
-
-article > section:nth-of-type(2) section img:nth-of-type(2) {
-	order: 2;
-}
-
-article > section:nth-of-type(2) section img:nth-of-type(3) {
-	order: 3;
-}
-
-article > section:nth-of-type(2) section img:last-of-type {
-	order: 4;
+	align-self: flex-end;
 }

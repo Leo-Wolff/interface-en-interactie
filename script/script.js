@@ -84,9 +84,9 @@ function allowDrop(event) {
 // This object has all of the different information that is needed for each specific item in the timeline
 const clueData = {
 	0: {
-		firstImage: tableImages[2],
+		firstImage: tableImages[1],
 		secondImage: shelfImages[2],
-		thirdImage: tableImages[1],
+		thirdImage: tableImages[0],
 		clueParagraph: document.querySelectorAll(
 			"article > section:first-of-type li:first-of-type p:not(:first-of-type)"
 		),
@@ -97,7 +97,7 @@ const clueData = {
 	},
 	1: {
 		firstImage: shelfImages[4],
-		secondImage: tableImages[2],
+		secondImage: tableImages[1],
 		thirdImage: shelfImages[3],
 		clueParagraph: document.querySelectorAll(
 			"article > section:first-of-type li:nth-of-type(2) p:not(:first-of-type)"
@@ -110,9 +110,9 @@ const clueData = {
 	2: {
 		firstImage: shelfImages[6],
 		secondImage: shelfImages[4],
-		thirdImage: tableImages[2],
+		thirdImage: tableImages[1],
 		clueParagraph: document.querySelectorAll(
-			"article > section:first-of-type li:nth-of-type(2) p:not(:first-of-type)"
+			"article > section:first-of-type li:nth-of-type(3) p:not(:first-of-type)"
 		),
 		text: [
 			"With the First Blade and the Mark of Cain, Dean believes he is the only one who can kill the enemy.",
