@@ -1,0 +1,68 @@
+article > section:first-of-type > section:first-of-type {
+	top: calc(50% - (75vh / 2));
+	left: calc(50% - (75vw / 2));
+
+	border: 0.4em solid var(--shelf-colour);
+	border-radius: 1vw;
+	box-shadow: 0.25em 0.25em 5em black, 0 0 5em var(--shelf-colour) inset;
+
+	width: 75vw;
+	height: 75vh;
+
+	background-color: var(--tutorial-bg);
+}
+
+article > section:first-of-type > section:first-of-type > div {
+	position: relative;
+	top: calc(50% - (90% / 2));
+	left: calc(50% - (85% / 2));
+
+	width: 85%;
+	min-height: 85%;
+}
+
+article > section:first-of-type > section:first-of-type > div p {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	margin-bottom: 1em;
+
+	max-width: 40em;
+
+	font-size: calc(0.5em + 0.5vw);
+	text-align: center;
+}
+
+article > section:first-of-type > section:first-of-type > div img {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+
+	height: 12.5em;
+	aspect-ratio: 16/9;
+}
+
+article > section:first-of-type > section:first-of-type > div button {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+
+	border: 0.25em solid var(--primary-border);
+	border-radius: 10px;
+	padding: 1em 5em;
+
+	text-align: center;
+
+	background-color: var(--primary-bg);
+	color: var(--white-text);
+	font-size: 0.75em;
+	font-family: var(--text-font);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+article > section:first-of-type > section:first-of-type > div button:hover {
+	cursor: pointer;
+}

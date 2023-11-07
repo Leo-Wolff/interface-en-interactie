@@ -1,12 +1,25 @@
 //
+// TUTORIAL
+//
+document
+	.querySelector(
+		"article > section:first-of-type > section:first-of-type button"
+	)
+	.addEventListener("click", () => {
+		document
+			.querySelector("article > section:first-of-type > section:first-of-type")
+			.classList.add("hidden")
+	})
+
+//
 // NAVIGATION
 //
 
 const navButtons = document.querySelectorAll(
-	"article > section:first-of-type section button"
+	"article > section:nth-of-type(2) section button"
 )
 const liElements = document.querySelectorAll(
-	"article > section:first-of-type ul li"
+	"article > section:nth-of-type(2) ul li"
 )
 // let is used here so the variable can be changed throughout use of the website
 let currentIndex = 0
@@ -60,10 +73,10 @@ showCurrentLi()
 // DRAG AND DROP
 //
 const targetImage = document.querySelectorAll(
-	"article > section:first-of-type li img"
+	"article > section:nth-of-type(2) li img"
 )
 const tableImages = document.querySelectorAll(
-	"article > section:nth-of-type(2) img"
+	"article > section:nth-of-type(3) img"
 )
 const shelfImages = document.querySelectorAll(
 	"article > section:last-of-type img"
@@ -88,7 +101,7 @@ const clueData = {
 		secondImage: shelfImages[3],
 		thirdImage: tableImages[0],
 		clueParagraph: document.querySelectorAll(
-			"article > section:first-of-type li:first-of-type p:not(:first-of-type)"
+			"article > section:nth-of-type(2) li:first-of-type p:not(:first-of-type)"
 		),
 		text: [
 			"It was a demon, he talked with them to save Sam's live.",
@@ -100,7 +113,7 @@ const clueData = {
 		secondImage: tableImages[1],
 		thirdImage: shelfImages[6],
 		clueParagraph: document.querySelectorAll(
-			"article > section:first-of-type li:nth-of-type(2) p:not(:first-of-type)"
+			"article > section:nth-of-type(2) li:nth-of-type(2) p:not(:first-of-type)"
 		),
 		text: [
 			"Sam and Dean caused Lucifer to rise. What does he rule?",

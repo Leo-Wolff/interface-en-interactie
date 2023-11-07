@@ -1,4 +1,4 @@
-article > section:nth-of-type(2) section {
+article > section:nth-of-type(3) div {
 	display: flex;
 	flex-flow: column wrap;
 	justify-content: space-evenly;
@@ -13,7 +13,7 @@ article > section:nth-of-type(2) section {
 	height: calc(100% - 2em); /* margin */
 }
 
-article > section:nth-of-type(2) section img {
+article > section:nth-of-type(3) div img {
 	align-self: flex-end;
 
 	max-width: 100%;

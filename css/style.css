@@ -9,13 +9,6 @@ ROOT + FONTS
 }
 
 @font-face {
-	font-family: "IBM Plex Mono";
-	src: url("../font/IBM_Plex_Mono/IBMPlexMono-Regular.ttf"), format("ttf");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
 	font-family: "Lora";
 	src: url("../font/Lora/Lora-VariableFont_wght.ttf"), format("ttf");
 	font-weight: normal;
@@ -24,11 +17,15 @@ ROOT + FONTS
 
 :root {
 	--shelf-colour: #aa8261;
+	--tutorial-bg: #f4d7c0;
+	--primary-bg: #880d0d;
+	--primary-border: #ff0000;
+	--whiteboard-gradient: radial-gradient(#e5e5e5 50%, #bcbcbc);
+	--pillar-colour: #bcbcbc;
+	--white-text: #e5e5e5;
 
 	--heading-font: "Cinzel", "URW Bookman", "Georgia Pro", Georgia, serif;
 	--text-font: "Lora", Optima, source-sans-pro, sans-serif;
-
-	--whiteboard-gradient: radial-gradient(#e5e5e5 50%, #bcbcbc);
 }
 
 /* *************
@@ -42,6 +39,14 @@ body {
 }
 
 h1 {
+	margin: 0;
+
+	font-family: var(--heading-font);
+	font-size: calc(2em + 0.5vw);
+	text-align: center;
+}
+
+h2 {
 	grid-column-start: 1;
 	grid-column-end: 3;
 
@@ -110,6 +115,11 @@ article {
 article > section:first-of-type {
 	grid-column-start: 1;
 	grid-row-start: 1;
+}
+
+article > section:nth-of-type(2) {
+	grid-column-start: 1;
+	grid-row-start: 1;
 
 	margin: 1em;
 	box-shadow: 0.5em 0.5em 2em 1em rgb(25 5 0 / 0.75);
@@ -120,7 +130,7 @@ article > section:first-of-type {
 	background: var(--whiteboard-gradient);
 }
 
-article > section:nth-of-type(2) {
+article > section:nth-of-type(3) {
 	grid-column-start: 1;
 	grid-row-start: 2;
 
@@ -142,7 +152,7 @@ article > section:last-of-type {
 	grid-column-end: auto;
 	align-self: end;
 
-	border: 3em solid #bcbcbc;
+	border: 3em solid var(--pillar-colour);
 	border-bottom: none;
 	border-right: none;
 	border-radius: 71% 0% 0% 0% / 22% 0% 0% 0%;
@@ -152,12 +162,22 @@ article > section:last-of-type {
 	background-image: url(../img/wooden-texture.jpg);
 }
 
-article > section:nth-of-type(2) img:hover {
+article > section:first-of-type > section {
+	position: absolute;
+
+	z-index: 50;
+}
+
+article > section:nth-of-type(3) img:hover {
+	cursor: pointer;
+
 	transform: scale(1.25);
 	transition: 0.5s;
 }
 
 article > section:last-of-type img:hover {
+	cursor: pointer;
+
 	transform: scale(1);
 	transition: 0.5s;
 }

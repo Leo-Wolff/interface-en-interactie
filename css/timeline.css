@@ -2,7 +2,7 @@
 TIMELINE
 ************* */
 /* test button */
-article > section:first-of-type a {
+article > section:nth-of-type(2) a {
 	position: relative;
 
 	z-index: 100;
@@ -10,7 +10,7 @@ article > section:first-of-type a {
 
 /* NAVIGATION BUTTONS */
 
-article > section:first-of-type section {
+article > section:nth-of-type(2) section {
 	display: flex;
 	justify-content: space-between;
 
@@ -24,7 +24,7 @@ article > section:first-of-type section {
 	z-index: 5;
 }
 
-article > section:first-of-type section button {
+article > section:nth-of-type(2) section button {
 	display: block;
 	align-self: center;
 
@@ -38,7 +38,7 @@ article > section:first-of-type section button {
 	opacity: 0;
 }
 
-article > section:first-of-type section button:hover {
+article > section:nth-of-type(2) section button:hover {
 	cursor: pointer;
 
 	opacity: 1;
@@ -46,25 +46,25 @@ article > section:first-of-type section button:hover {
 	transition: 0.5s;
 }
 
-article > section:first-of-type section button img {
+article > section:nth-of-type(2) section button img {
 	width: 3em;
 	aspect-ratio: 1/1;
 }
 
-article > section:first-of-type section button:first-of-type img {
+article > section:nth-of-type(2) section button:first-of-type img {
 	transform: scaleX(-1); /* flip previous image */
 }
 
 /* TIMELINE ITEMS */
 
-article > section:first-of-type ul {
+article > section:nth-of-type(2) ul {
 	margin: 0;
 	padding: 0;
 
 	list-style-type: none;
 }
 
-article > section:first-of-type ul li {
+article > section:nth-of-type(2) ul li {
 	display: none; /* depending on which li you're viewing, all other li are not visible */
 	grid-template-columns: 40% 57.5%;
 	gap: 1em;
@@ -80,17 +80,17 @@ article > section:first-of-type ul li {
 
 /* general .active doesn't get used here since display: none;
 is more specifically selected so it would override that */
-article > section:first-of-type li.active {
+article > section:nth-of-type(2) li.active {
 	display: grid;
 }
 
 /* all clues are placed in the first column */
-article > section:first-of-type li p:not(:first-of-type) {
+article > section:nth-of-type(2) li p:not(:first-of-type) {
 	grid-column-start: 1;
 }
 
 /* time indication of the episode the scene is from */
-article > section:first-of-type li p:first-of-type {
+article > section:nth-of-type(2) li p:first-of-type {
 	grid-column-start: 2;
 	grid-column-end: 2;
 	justify-self: end;
@@ -101,7 +101,7 @@ article > section:first-of-type li p:first-of-type {
 	line-height: 0;
 }
 
-article > section:first-of-type li img,
+article > section:nth-of-type(2) li img,
 video {
 	grid-column-start: 2;
 	grid-row-start: 3;
@@ -117,6 +117,6 @@ video {
 	z-index: 10;
 }
 
-article > section:first-of-type li img {
+article > section:nth-of-type(2) li img {
 	width: 75%;
 }
