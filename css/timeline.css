@@ -38,7 +38,8 @@ article > section:nth-of-type(2) section button {
 	opacity: 0;
 }
 
-article > section:nth-of-type(2) section button:hover {
+article > section:nth-of-type(2) section button:hover,
+article > section:nth-of-type(2) section button:focus {
 	cursor: pointer;
 
 	opacity: 1;

@@ -66,3 +66,34 @@ article > section:first-of-type > section:first-of-type > div button {
 article > section:first-of-type > section:first-of-type > div button:hover {
 	cursor: pointer;
 }
+
+article > section:first-of-type > section:nth-of-type(2) {
+	position: absolute;
+	right: 0;
+	bottom: 1em;
+	transform: translateX(100%);
+
+	border: 0.4em solid var(--shelf-colour);
+	border-right: 0;
+	border-radius: 10px 0 0 10px;
+	box-shadow: 0 0 2.5em var(--shelf-colour) inset;
+
+	background-color: var(--tutorial-bg);
+	animation: slide 1.5s ease-out forwards, slide 1.5s ease-in 10s reverse;
+	/* To make sure that after the second animation, the pop-up is gone */
+	animation-fill-mode: forwards;
+}
+
+article > section:first-of-type > section:nth-of-type(2) p {
+	margin: 0 0 1em 1em;
+	width: 30em;
+}
+
+@keyframes slide {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
