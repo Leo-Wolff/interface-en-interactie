@@ -198,6 +198,8 @@ const clueData = {
 // CHANGE CLUE TEXT
 // /////////////
 
+// Easter egg
+const easterEggContent = timelineLi[7].querySelectorAll("*")
 let paragraphIndex = 0
 
 function drop(event) {
@@ -205,10 +207,27 @@ function drop(event) {
 
 	// If the mystery spot cube gets sacrificed, it unlocks the easter egg
 	if (draggedImage == shelfImages[7]) {
+		// Show pop-up
 		document
 			.querySelector("article > section:first-of-type > section:nth-of-type(2)")
 			.classList.remove("hidden")
-		liElements[7].classList.remove("hidden")
+
+		// Spin animation when sacrifice is succesful
+		targetImage[currentIndex].classList.add("spin")
+		draggedImage.classList.add("hidden")
+
+		// Stop animation when finished
+		setTimeout(() => {
+			targetImage[currentIndex].classList.remove("spin")
+		}, 1000)
+
+		// Show content
+		easterEggContent.forEach((element) => {
+			element.classList.remove("hidden")
+		})
+
+		// Hide pentagram
+		easterEggContent[0].classList.add("hidden")
 	}
 
 	// If any target image is the same as the event target, then it can reveal a clue

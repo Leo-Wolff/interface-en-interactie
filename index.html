@@ -304,23 +304,30 @@
 						</li>
 
 						<!-- Secret timeline item -->
-						<li class="hidden">
-							<h2>Mystery Spot</h2>
+						<li>
+							<img
+								ondragover="allowDrop(event)"
+								ondrop="drop(event)"
+								src="img/pentagram.svg"
+								alt="A red pentagram, you can drop evidence here."
+							/>
 
-							<p>Season 3 Episode 11</p>
+							<h2 class="hidden">Mystery Spot</h2>
 
-							<p>
+							<p class="hidden">Season 3 Episode 11</p>
+
+							<p class="hidden">
 								Mystery Spot is a Supernatural episode where Dean has had the
 								most deaths in the entire series! The episode involves Sam and
 								Dean investigating a case as usual.
 							</p>
-							<p>
+							<p class="hidden">
 								Dean dies on the first day of the investigation, and once the
 								day ends Sam notices it is Tuesday again. Sam is stuck in a
 								timeloop, a constant repeat of Tuesday where Dean some way or
 								other keeps dying.
 							</p>
-							<p>
+							<p class="hidden">
 								Sam finds it out that a Trickster is behind this cruel prank,
 								and after a lot of struggle manages to keep Dean alive with no
 								more time loop.
@@ -328,6 +335,7 @@
 
 							<!-- Video from: https://www.youtube.com/watch?v=JIfVovHB5uA -->
 							<video
+								class="hidden"
 								src="video/mystery-spot.mp4"
 								controls
 								preload="none"
