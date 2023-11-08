@@ -2,7 +2,7 @@ article > section:last-of-type > section {
 	display: grid;
 	grid-template-columns: 1fr repeat(2, minmax(12.5em, 1fr));
 	grid-template-rows:
-		1.5em minmax(8em, auto) 1.5em minmax(15em, auto) 1.5em
+		1em minmax(8em, auto) 1em minmax(15em, auto) 1em
 		minmax(6em, auto);
 	align-items: end;
 
@@ -37,23 +37,28 @@ article > section:last-of-type > section div:last-of-type {
 	grid-row-start: 5;
 }
 
-article > section:last-of-type > section img {
+article > section:last-of-type > section button {
 	justify-self: center;
 
 	transform: scale(0.75);
 	transform-origin: bottom left;
 }
 
-article > section:last-of-type > section img:nth-of-type(5) {
+article > section:last-of-type > section button:nth-of-type(5) {
 	grid-column: 2 / 4;
 	grid-row-start: 4;
 }
 
-article > section:last-of-type > section img:nth-of-type(4) {
+article > section:last-of-type > section button:nth-of-type(4) {
 	grid-column-start: 1;
 	grid-row-start: 4;
 }
 
-article > section:last-of-type > section img:nth-of-type(1n + 6) {
+article > section:last-of-type > section button:nth-of-type(1n + 6) {
 	grid-row-start: 6;
+}
+
+article > section:last-of-type > section button img {
+	transform: scale(0.75);
+	transform-origin: bottom center;
 }

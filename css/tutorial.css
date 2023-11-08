@@ -63,8 +63,18 @@ article > section:first-of-type > section:first-of-type > div button {
 	text-transform: uppercase;
 }
 
+article > section:first-of-type > section:first-of-type > div button:focus {
+	outline: none;
+
+	background-color: var(--primary-border);
+}
+
 article > section:first-of-type > section:first-of-type > div button:hover {
 	cursor: pointer;
+
+	outline: none;
+
+	background-color: var(--primary-border);
 }
 
 article > section:first-of-type > section:nth-of-type(2) {

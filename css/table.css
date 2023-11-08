@@ -13,10 +13,15 @@ article > section:nth-of-type(3) div {
 	height: calc(100% - 2em); /* margin */
 }
 
-article > section:nth-of-type(3) div img {
+article > section:nth-of-type(3) div button {
 	align-self: flex-end;
 
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: contain;
+}
+
+article > section:nth-of-type(3) div button img {
+	max-width: 100%;
+	max-height: 100%;
 }
