@@ -48,8 +48,11 @@ navButtons[0].addEventListener("click", () => {
 	tableImages.forEach((img) => {
 		img.classList.remove("hidden")
 	})
-	shelfImages.forEach((img) => {
-		img.classList.remove("hidden")
+	shelfImages.forEach((img, index) => {
+		// Keep easter egg hidden
+		if (index !== 7) {
+			img.classList.remove("hidden")
+		}
 	})
 
 	showCurrentLi()
@@ -62,6 +65,7 @@ navButtons[1].addEventListener("click", () => {
 		img.classList.remove("hidden")
 	})
 	shelfImages.forEach((img, index) => {
+		// Keep easter egg hidden
 		if (index !== 7) {
 			img.classList.remove("hidden")
 		}
@@ -279,11 +283,7 @@ function finalAnimation() {
 	}, 3000)
 
 	// Easter egg
-	if (
-		currentIndex == 5 &&
-		paragraphIndex == 2 &&
-		draggedImage == currentClue.thirdImage
-	) {
+	if (currentIndex == 6 && paragraphIndex == 2) {
 		setTimeout(() => {
 			shelfImages[7].classList.remove("hidden")
 		}, 3000)
