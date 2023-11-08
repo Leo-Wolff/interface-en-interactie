@@ -1,3 +1,12 @@
+/* *************
+LAY-OUT
+************* */
+article > section:first-of-type > section {
+	position: absolute;
+
+	z-index: 50;
+}
+
 article > section:first-of-type > section:first-of-type {
 	top: calc(50% - (75vh / 2));
 	left: calc(50% - (75vw / 2));
@@ -20,6 +29,10 @@ article > section:first-of-type > section:first-of-type > div {
 	width: 85%;
 	min-height: 85%;
 }
+
+/* *************
+ZERO STATE POP-UP
+************* */
 
 article > section:first-of-type > section:first-of-type > div p {
 	position: relative;
@@ -45,27 +58,25 @@ article > section:first-of-type > section:first-of-type > div img {
 
 article > section:first-of-type > section:first-of-type > div button {
 	position: absolute;
-	left: 50%;
 	bottom: 0;
+	left: 50%;
 	transform: translateX(-50%);
 
 	border: 0.25em solid var(--primary-border);
 	border-radius: 10px;
 	padding: 1em 5em;
 
-	text-align: center;
-
-	background-color: var(--primary-bg);
-	color: var(--white-text);
-	font-size: 0.75em;
 	font-family: var(--text-font);
+	font-size: 0.75em;
 	font-weight: bold;
+	text-align: center;
 	text-transform: uppercase;
+	color: var(--white-text);
+	background-color: var(--primary-bg);
 }
 
 article > section:first-of-type > section:first-of-type > div button:focus {
 	outline: none;
-
 	background-color: var(--primary-border);
 }
 
@@ -73,9 +84,12 @@ article > section:first-of-type > section:first-of-type > div button:hover {
 	cursor: pointer;
 
 	outline: none;
-
 	background-color: var(--primary-border);
 }
+
+/* *************
+EASTER EGG POP-UP
+************* */
 
 article > section:first-of-type > section:nth-of-type(2) {
 	position: absolute;
@@ -89,6 +103,7 @@ article > section:first-of-type > section:nth-of-type(2) {
 	box-shadow: 0 0 2.5em var(--shelf-colour) inset;
 
 	background-color: var(--tutorial-bg);
+
 	animation: slide 1.5s ease-out forwards, slide 1.5s ease-in 10s reverse;
 	/* To make sure that after the second animation, the pop-up is gone */
 	animation-fill-mode: forwards;
@@ -96,6 +111,7 @@ article > section:first-of-type > section:nth-of-type(2) {
 
 article > section:first-of-type > section:nth-of-type(2) p {
 	margin: 0 0 1em 1em;
+
 	width: 30em;
 }
 

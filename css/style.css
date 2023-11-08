@@ -23,6 +23,8 @@ ROOT + FONTS
 	--whiteboard-gradient: radial-gradient(#e5e5e5 50%, #bcbcbc);
 	--pillar-colour: #bcbcbc;
 	--white-text: #e5e5e5;
+	--nav-button: #00000080;
+	--nav-button-focus: #000000;
 
 	--heading-font: "Cinzel", "URW Bookman", "Georgia Pro", Georgia, serif;
 	--text-font: "Lora", Optima, source-sans-pro, sans-serif;
@@ -35,10 +37,10 @@ body {
 	margin: 0;
 	padding: 0;
 
+	overflow-x: hidden;
+
 	/* Traced from: http://www.highresolutiontextures.com/stone-wall-brick-wall-free-textures */
 	background-image: url(../img/brick-background.png);
-
-	overflow-x: hidden;
 }
 
 h1 {
@@ -76,11 +78,13 @@ p {
 
 button {
 	margin: 0;
+	border: none;
 	padding: 0;
 
-	border: none;
 	background: none;
 }
+
+/* Classes for classlist */
 
 .hidden {
 	display: none;
@@ -119,14 +123,18 @@ button {
 	}
 }
 
+/* *************
+LAY-OUT
+************* */
+
 article {
 	display: grid;
-	grid-template-rows: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
 	gap: 2em;
 
-	width: 100vw; /* negate margin */
-	height: 100vh; /* negate margin */
+	width: 100vw;
+	height: 100vh;
 }
 
 article > section:first-of-type {
@@ -152,8 +160,8 @@ article > section:nth-of-type(3) {
 	grid-row-start: 2;
 
 	position: relative;
-	transform-origin: bottom right;
 	transform: skew(15deg);
+	transform-origin: bottom right;
 
 	padding: 1em;
 
@@ -164,44 +172,38 @@ article > section:nth-of-type(3) {
 }
 
 article > section:last-of-type {
-	grid-column-start: 2;
-	grid-row-start: 1;
-	grid-row-end: 3;
-	grid-column-end: auto;
+	grid-column: 2 / auto;
+	grid-row: 1 / 3;
 	align-self: end;
 
 	border: 3em solid var(--pillar-colour);
-	border-bottom: none;
 	border-right: none;
+	border-bottom: none;
 	border-radius: 71% 0% 0% 0% / 22% 0% 0% 0%;
 
-	height: calc(100% - 1em); /* give it a margin essentially */
+	height: calc(100% - 1em); /* give it a margin */
 
 	/* Traced from: https://www.vectorstock.com/royalty-free-vector/cartoon-wooden-seamless-textures-vector-9653088 */
 	background-image: url(../img/wooden-texture.jpg);
 }
 
-article > section:first-of-type > section {
-	position: absolute;
+/* States for table + shelf */
 
-	z-index: 50;
-}
+article > section:nth-of-type(3) img:hover,
+article > section:last-of-type img:hover {
+	transform: scale(1.25);
 
-article > section:nth-of-type(3) img:hover {
 	cursor: pointer;
 
-	transform: scale(1.25);
 	transition: 0.5s;
 }
 
 article > section:last-of-type img:hover {
-	cursor: pointer;
-
 	transform: scale(1);
-	transition: 0.5s;
 }
 
-article > section:nth-of-type(3) button:focus {
+article > section:nth-of-type(3) button:focus,
+article > section:last-of-type button:focus {
 	transform: scale(1.25);
 	transition: 0.5s;
 
@@ -211,8 +213,4 @@ article > section:nth-of-type(3) button:focus {
 
 article > section:last-of-type button:focus {
 	transform: scale(1);
-	transition: 0.5s;
-
-	outline: none;
-	filter: drop-shadow(0 0 2em var(--primary-border));
 }

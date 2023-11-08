@@ -1,6 +1,11 @@
 article > section:last-of-type > section {
 	display: grid;
+	/* The first column is always consistent in size,
+	the others will adjust according to screen size */
 	grid-template-columns: 1fr repeat(2, minmax(12.5em, 1fr));
+	/* The shelves are 1em, the rest of the shelves
+	are sized to just about fit the items in them when
+	dealing with smaller screen sizes */
 	grid-template-rows:
 		1em minmax(8em, auto) 1em minmax(15em, auto) 1em
 		minmax(6em, auto);
@@ -13,7 +18,10 @@ article > section:last-of-type > section {
 	overflow-x: hidden;
 }
 
-/* SHELVES */
+/* *************
+SHELVES
+************* */
+
 article > section:last-of-type > section div {
 	grid-column: 1 / -1;
 
@@ -41,7 +49,8 @@ article > section:last-of-type > section button {
 	justify-self: center;
 
 	transform: scale(0.75);
-	transform-origin: bottom left;
+	/* Make sure the items still look like they are on the shelves */
+	transform-origin: bottom center;
 }
 
 article > section:last-of-type > section button:nth-of-type(5) {
